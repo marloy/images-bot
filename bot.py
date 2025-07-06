@@ -46,7 +46,7 @@ class MediaProcessor:
             logger.info(f"Файл успешно загружен: {remote_path}")
         except Exception as e:
             logger.error(f"Ошибка загрузки на Яндекс.Диск: {e}")
-            await message.answer("Ошибка загрузки файла на диск.")
+            await message.reply("Ошибка загрузки файла на диск.")
 
     async def extract_media_info(self, message: types.Message):
         if message.photo:
