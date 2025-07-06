@@ -36,8 +36,9 @@ class MediaProcessor:
             return
 
         topic_id = message.message_thread_id or "no_topic"
+        chat_id = message.chat.id or "no_chat"
         filename = f"{message.from_user.id}_{message.message_id}_{int(message.date.timestamp())}.{ext}"
-        remote_path = f"TelegramMedia/{topic_id}/{filename}"
+        remote_path = f"TelegramMedia/{chat_id}/{topic_id}/{filename}"
 
         logger.info(f"Начинаем загрузку файла: {remote_path}")
         try:
